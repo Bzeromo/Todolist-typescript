@@ -12,7 +12,6 @@
   - 이는 Context API에 useReducer를 사용한 것과 유사하다.
   - 소규모 프로젝트에는 Redux보다 Context API가 더 좋을 수도 있다.
 
-  yarn add @reduxjs/toolkit
   yarn add redux react-redux
 
 # redux-logger
@@ -30,3 +29,11 @@
 # redux-presist
   - 상태가 localStorage나 sessionStorage를 통해 남아 있을 수 있도록 도와주는 middleware 라이브러리
   - yarn add redux-persist
+  - yarn add -D @types/redux-persist // 이 친구도 타입 없음
+  - whitelist 속성으로 이벤트가 적용될 상태만 지정하거나 blacklist 속성으로 이벤트가 적용되지 않을 상태를 지정할 수 있다.
+
+# Redux-toolkit
+  - toolkit으로 slice를 이용해 로직들을 하나로 합쳐서 관리하는 것이 가능해진다.
+  - createAction과 createReducer를 이용해 따로따로 관리할 수도 있다.
+  - 어느 방법을 사용하든 기존의 redux보다 간단하고 타입스크립트의 취지에 맞는 코딩이 가능해진다.
+  - yarn add @reduxjs/toolkit

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import Toggle from "./Toggle";
-import { removeTask, updateTask } from "../redux/tasks";
 import { useDispatch } from "react-redux";
+import { tasks } from "../redux/tasks";
 
 const ListItem = styled.li`
     display: flex;
@@ -49,10 +49,10 @@ const Task = ({ id, content, complete, ...props }: Props) => {
         <ListItem {...props}>
             <Toggle 
                 on={complete} 
-                onChange={(e) => dispatch(updateTask(id, content, e.target.checked))}
+                onChange={(e) => dispatch(tasks.actions.update(id, content, e.target.checked))}
             />
             <Content complete={complete}>{content}</Content>
-            <RemoveButton onClick={() => dispatch(removeTask(id))}>Remove</RemoveButton>
+            <RemoveButton onClick={() => dispatch(tasks.actions.remove(id))}>Remove</RemoveButton>
         </ListItem>
     )
 }

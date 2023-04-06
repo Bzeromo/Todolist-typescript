@@ -7,4 +7,4 @@ export default {
 
 export const Default = () => {
     return <Header>Header</Header>
-}
+};
